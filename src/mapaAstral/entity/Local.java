@@ -1,8 +1,11 @@
 package src.mapaAstral.entity;
 
+import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.Scanner;
-import java.util.TimeZone;
+
 
 public class Local {
     public static ZoneId lerLocal(Scanner sc){
@@ -11,7 +14,7 @@ public class Local {
         return ZoneId.of(localDeNascimento);
     }
 
-    public static TimeZone getTimeZone(ZoneId zoneId){
-        return TimeZone.getTimeZone(zoneId);
+    public static ZoneOffset getTimeZone(ZoneId zoneId, LocalDateTime localDateTime){
+        return ZonedDateTime.of(localDateTime, zoneId).getOffset();
     }
 }

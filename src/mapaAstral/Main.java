@@ -15,7 +15,7 @@ public class Main {
         ZoneId localNascimento = Local.lerLocal(sc);
         boolean anoBissexto = Ano.isBissexto(dataNascimento);
         String dataFormatada = Data.formatar(dataNascimento);
-        String timeZoneNascimento = Local.getTimeZone(localNascimento).getID();
+        String timeZoneNascimento = Local.getTimeZone(localNascimento,dataNascimento).toString();
         String signo = Signo.of(Data.toMonthDay(dataNascimento));
         String ascendente = Ascendente.of(signo,dataNascimento);
         String signoLunar = SignoLunar.of(dataNascimento.toLocalTime(),localNascimento.toString());
